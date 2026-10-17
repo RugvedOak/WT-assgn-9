@@ -1,0 +1,156 @@
+{
+  "measuredAt": "2026-10-17T14:44:47.414Z",
+  "baseUrl": "http://localhost:3000",
+  "iterations": 5,
+  "note": "Node.js fetch() time until response headers; approximate response timing, not browser TTFB. ISR samples follow a warm-up request and do not measure regeneration.",
+  "results": [
+    {
+      "path": "/posts",
+      "strategy": "SSG",
+      "medianMs": 15.56,
+      "averageMs": 29.39,
+      "status": "ok",
+      "responseStatuses": [
+        200,
+        200,
+        200,
+        200,
+        200
+      ],
+      "warmupStatus": null,
+      "samples": [
+        {
+          "status": 200,
+          "elapsedMs": 88.05
+        },
+        {
+          "status": 200,
+          "elapsedMs": 17.3
+        },
+        {
+          "status": 200,
+          "elapsedMs": 10.75
+        },
+        {
+          "status": 200,
+          "elapsedMs": 15.56
+        },
+        {
+          "status": 200,
+          "elapsedMs": 15.31
+        }
+      ]
+    },
+    {
+      "path": "/posts/1",
+      "strategy": "ISR · warm cache",
+      "medianMs": 6.82,
+      "averageMs": 6.78,
+      "status": "ok",
+      "responseStatuses": [
+        200,
+        200,
+        200,
+        200,
+        200
+      ],
+      "warmupStatus": 200,
+      "samples": [
+        {
+          "status": 200,
+          "elapsedMs": 7.42
+        },
+        {
+          "status": 200,
+          "elapsedMs": 6.82
+        },
+        {
+          "status": 200,
+          "elapsedMs": 7.69
+        },
+        {
+          "status": 200,
+          "elapsedMs": 6.19
+        },
+        {
+          "status": 200,
+          "elapsedMs": 5.8
+        }
+      ]
+    },
+    {
+      "path": "/dashboard",
+      "strategy": "SSR",
+      "medianMs": 13.88,
+      "averageMs": 17.62,
+      "status": "ok",
+      "responseStatuses": [
+        200,
+        200,
+        200,
+        200,
+        200
+      ],
+      "warmupStatus": null,
+      "samples": [
+        {
+          "status": 200,
+          "elapsedMs": 17.27
+        },
+        {
+          "status": 200,
+          "elapsedMs": 10.11
+        },
+        {
+          "status": 200,
+          "elapsedMs": 12.16
+        },
+        {
+          "status": 200,
+          "elapsedMs": 13.88
+        },
+        {
+          "status": 200,
+          "elapsedMs": 34.67
+        }
+      ]
+    },
+    {
+      "path": "/rsc",
+      "strategy": "RSC · revalidate 300s",
+      "medianMs": 5.91,
+      "averageMs": 7.98,
+      "status": "ok",
+      "responseStatuses": [
+        200,
+        200,
+        200,
+        200,
+        200
+      ],
+      "warmupStatus": null,
+      "samples": [
+        {
+          "status": 200,
+          "elapsedMs": 19.25
+        },
+        {
+          "status": 200,
+          "elapsedMs": 5.01
+        },
+        {
+          "status": 200,
+          "elapsedMs": 6.9
+        },
+        {
+          "status": 200,
+          "elapsedMs": 5.91
+        },
+        {
+          "status": 200,
+          "elapsedMs": 2.84
+        }
+      ]
+    }
+  ]
+}
