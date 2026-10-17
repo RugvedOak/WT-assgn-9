@@ -3,7 +3,7 @@ import path from "node:path";
 import { performance } from "node:perf_hooks";
 
 const baseUrl = (process.env.BASE_URL ?? "http://localhost:3000").replace(/\/$/, "");
-const iterations = Number.parseInt(process.env.ITERATIONS ?? "5", 10);
+const iterations = Number.parseInt(process.env.ITERATIONS ?? "100", 10);
 if (!Number.isInteger(iterations) || iterations < 1 || iterations > 100) {
   throw new Error("ITERATIONS must be an integer between 1 and 100.");
 }

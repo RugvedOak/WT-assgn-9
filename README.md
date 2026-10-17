@@ -34,7 +34,7 @@ Start the production server in one terminal:
 npm run start
 ```
 
-In another terminal, run `npm run measure:ttfb`. Set `BASE_URL` to target another running production server and `ITERATIONS` to change the number of samples, for example `BASE_URL=http://localhost:3001 ITERATIONS=7 npm run measure:ttfb`. The script warms `/posts/1` before timing ISR and saves actual results to `data/ttfb-results.json`; the performance page reads that file. Re-run the script to refresh it. The warm-up does not force a regeneration, so the script cannot measure the regeneration event itself.
+In another terminal, run `npm run measure:ttfb` to collect 100 samples per route. Set `BASE_URL` to target another running production server and `ITERATIONS` to choose a different sample count, for example `BASE_URL=http://localhost:3001 ITERATIONS=7 npm run measure:ttfb`. The script warms `/posts/1` before timing ISR and saves actual results to `data/ttfb-results.json`; the performance page reads that file. Re-run the script to refresh it. The warm-up does not force a regeneration, so the script cannot measure the regeneration event itself.
 
 These timings approximate Node.js time until `fetch()` receives response headers; they are not browser navigation TTFB. To inspect browser TTFB, open Chrome DevTools → Network, select a document request, and inspect Timing (especially Waiting for server response / TTFB). Browser timings include browser and network conditions and are not directly comparable to this script.
 

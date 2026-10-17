@@ -25,13 +25,12 @@ export default async function PerformancePage() {
         </aside>
         <div className="table-scroll">
           <table className="performance-table">
-            <thead><tr><th scope="col">Route</th><th scope="col">Rendering strategy</th><th scope="col">Median</th><th scope="col">Average</th><th scope="col">Test status</th></tr></thead>
+            <thead><tr><th scope="col">Route</th><th scope="col">Rendering strategy</th><th scope="col">Median</th><th scope="col">Average</th></tr></thead>
             <tbody>
               {measurements.results.map((item) => (
                 <tr key={item.path}>
                   <td><code>{item.path}</code></td><td>{item.strategy}</td>
                   <td>{formatMs(item.medianMs)}</td><td>{formatMs(item.averageMs)}</td>
-                  <td><span className={`status-pill ${item.status === "not-measured" ? "" : item.status}`}>{item.status === "not-measured" ? "Not measured" : item.status === "ok" ? "Passed" : item.status === "partial" ? "Partial failures" : "Failed"}</span></td>
                 </tr>
               ))}
             </tbody>
